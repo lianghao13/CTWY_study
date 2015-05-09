@@ -1,0 +1,20 @@
+/*
+   输入数组元素的值并显示 
+*/
+
+#include <stdio.h>
+
+int main(void) {
+    int i;
+    int vx[5];      /*包含5个元素的数组*/
+
+    for (i = 0; i < 5; i++) {
+        printf("vx[%d]:", i);
+        scanf("%d", &vx[i]);
+    }
+
+    for (i = 0; i < 5; i++)
+        printf("vx[%d] =  %d\n", i, vc[i]);
+
+    return (0);
+}
