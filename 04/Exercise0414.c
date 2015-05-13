@@ -1,11 +1,40 @@
 /*
-    æ˜¾ç¤ºèº«é«˜å’Œæ ‡å‡†ä½“é‡çš„å¯¹ç…§è¡¨ï¼Œèº«é«˜çš„èŒƒå›´å’Œé—´éš”ç”±è¾“å…¥çš„æ•´æ•°å€¼æŽ§åˆ¶ï¼Œæ ‡å‡†ä½“é‡ç²¾ç¡®åˆ°å°æ•°ç‚¹åŽ2ä½ 
+    ÏÔÊ¾Éí¸ßºÍ±ê×¼ÌåÖØµÄ¶ÔÕÕ±í£¬Éí¸ßµÄ·¶Î§ºÍ¼ä¸ôÓÉÊäÈëµÄÕûÊýÖµ¿ØÖÆ£¬±ê×¼ÌåÖØ¾«È·µ½Ð¡Êýµãºó2Î» 
 */
 
 #include <stdio.h>
 
 int main(void){
-    int height01, height02, step;
+    int height01, height02, step, tmp;
     float weight;
+    
+    do {
+        printf("¿ªÊ¼ÊýÖµ£¨cm£©:");    scanf("%d", &height01);
+        printf("½áÊøÊýÖµ£¨cm£©:");    scanf("%d", &height02);
+        printf("¼ä¸ôÊýÖµ£¨cm£©:");    scanf("%d", &step);
+        if (height01 > height02 || step <= 0) {
+            puts("\aÇëÊäÈëºÏÀíµÄ·¶Î§Öµ¡£");
+        }
+    } while (height02 <= height01);
 
+    tmp = (height02 - height01) % step;
+
+    if (tmp == 0) {
+        for (tmp = height01; tmp <= height02; tmp+=step) {
+            weight = 0.9 * tmp - 90;
+            printf("%dcm    %4.2fkg\n", tmp, weight);
+        }
+    }
+    else {
+        tmp = height01;
+        while (tmp < height02) {
+            weight = 0.9 * tmp - 90;
+            printf("%dcm    %4.2fkg\n", tmp, weight);
+            tmp += step;
+        }
+        weight = 0.9 * height02 - 90;
+        printf("%dcm    %4.2fkg\n", height02, weight);
+    }
+
+    return(0);
 }
