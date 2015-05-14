@@ -21,18 +21,18 @@ int main(void){
 
     if (tmp == 0) {
         for (tmp = height01; tmp <= height02; tmp+=step) {
-            weight = 0.9 * tmp - 90;
+            weight = (float)0.9 * tmp - 90;
             printf("%dcm    %4.2fkg\n", tmp, weight);
         }
     }
     else {
         tmp = height01;
         while (tmp < height02) {
-            weight = 0.9 * tmp - 90;
+            weight = (float)0.9 * tmp - 90;
             printf("%dcm    %4.2fkg\n", tmp, weight);
             tmp += step;
         }
-        weight = 0.9 * height02 - 90;
+        weight = (float)0.9 * height02 - 90;
         printf("%dcm    %4.2fkg\n", height02, weight);
     }
 
