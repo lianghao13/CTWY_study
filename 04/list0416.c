@@ -14,7 +14,7 @@ int main(void){
             printf("请输入一个非负整数:");
             scanf("%d", &num);
             if (num < 0)
-                puts("\a请不要输入负整数")
+                puts("\a请不要输入负整数");
         } while (num < 0);                  /*num的值大于等于0才向下执行*/
 
         for (i = 1; i <= num; i++)
