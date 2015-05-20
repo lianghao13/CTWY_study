@@ -9,10 +9,10 @@ int main(void) {
     double vd[5];      /*包含5个元素的数组*/
 
     for (i = 0; i < 5; i++)
-        vc[i] = 0.0;
+        vd[i] = 0.0;
 
     for (i = 0; i < 5; i++)
-        printf("vc[%d] =  %.1f\n", i, vc[i]);
+        printf("vd[%d] =  %.1f\n", i, vd[i]);
 
     return (0);
 }
