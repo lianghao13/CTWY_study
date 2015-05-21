@@ -19,8 +19,8 @@ int main(void) {
 
     min = max = tensu[0];
     for (i = 0; i < NUMBER; i++) {
-        if (tensu[i] > max) max = tensu[i];
-        if (tensu[i] < min) min = tensu[i];
+        if (tensu[i] > max)      max = tensu[i];
+        if (tensu[i] < min)      min = tensu[i];
     }
     printf("最高分：%d\n",max);
     printf("最低分：%d\n",min);

@@ -14,7 +14,7 @@ int main(void) {
     }
 
     for (i = 0; i < 5; i++)
-        printf("vx[%d] =  %d\n", i, vc[i]);
+        printf("vx[%d] = %d\n", i, vx[i]);
 
     return (0);
 }
