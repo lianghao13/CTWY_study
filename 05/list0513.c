@@ -11,7 +11,6 @@ int main(void) {
     int num = 0;                    /*实际人数*/
     int tensu[NUMBER];              /*学生分数*/
     int bunpu[11] = {0};            /*分布图*/
-    int c_scanf;                    /*scanf()后用于清除输入缓存*/ 
 
     for (i = 0; i < NUMBER; ++i) {
         tensu[i] = -1;               /*为保证对分数输入的错误判断，分数初始为-1*/ 
@@ -20,6 +19,7 @@ int main(void) {
     printf("请输入学生人数：");
     do {
         scanf("%d", &num);
+        int c_scanf;                    /*scanf()后用于清除输入缓存*/ 
         while(((c_scanf = getchar()) != '\n' ) && (c_scanf != EOF))
             ;                                        /*清空缓冲区中的多余字符*/ 
         if (num <1 || num > NUMBER)
@@ -31,6 +31,7 @@ int main(void) {
         printf("%2d号：", i + 1);
         do {
             scanf("%d", &tensu[i]);
+            int c_scanf;                    /*scanf()后用于清除输入缓存*/ 
             while(((c_scanf = getchar()) != '\n' ) && (c_scanf != EOF))
                 ;                                        /*清空缓冲区中的多余字符*/ 
             if (tensu[i] < 0 || tensu[i] > 100)
