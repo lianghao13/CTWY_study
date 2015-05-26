@@ -1,16 +1,13 @@
 /*
-    返回两个整数中较大值的函数
+    返回两个整数中较小值的函数
 */
 
 #include <stdio.h>
 
-/*返回较大整数的值---*/
+/*---返回较小整数的值---*/
 
-int maxof(int x, int y) {
-    if (x > y)
-        return (x);
-    else
-        return (y);
+int minof(int x, int y) {
+        return((x < y) ? x : y);
 }
 
 int main(void) {
@@ -25,7 +22,7 @@ int main(void) {
     while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
        ; 
 
-    printf("较大的整数值是%d。\n", maxof(na, nb));
+    printf("较小的整数值是%d。\n", minof(na, nb));
 
     return (0);
 }

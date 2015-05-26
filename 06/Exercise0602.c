@@ -1,17 +1,17 @@
 /*
-    返回三个整数中最大值的函数
+    返回三个整数中最小值的函数
 */
 
 #include <stdio.h>
 
-/*---返回较大整数的值---*/
+/*---返回较小整数的值---*/
 
-int max3(int x, int y, int z) {
-    int max = x;
+int min3(int x, int y, int z) {
+    int min = x;
 
-    if (y > max)    max = y;
-    if (z > max)    max = z;
-    return (max);
+    if (y < min)    min = y;
+    if (z < min)    min = z;
+    return (min);
 }
 
 int main(void) {
@@ -29,7 +29,7 @@ int main(void) {
     while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
         ;
 
-    printf("较大的整数值是%d。\n", max3(na, nb, nc));
+    printf("较小的整数值是%d。\n", min3(na, nb, nc));
 
     return (0);
 }
