@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-#define NUMBER 80                   /*人数上限*/
+#define NUMBER 80                  /*人数上限*/
 
 int main(void) {
     int i,j;
