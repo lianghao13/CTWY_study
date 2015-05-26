@@ -12,8 +12,11 @@ void put_stars(int no) {
 
 int main(void) {
     int i, ln;
+    int c_scanf;
 
     printf("三角形有几层：");   scanf("%d", &ln);
+    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        ;
 
     for (i = 1; i <= ln; i++) {
         put_stars(i);

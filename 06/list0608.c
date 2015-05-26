@@ -7,13 +7,16 @@
 /*---连续显示出no个字符ch---*/
 void put_nchar(int ch, int no) {
     while (no-- > 0)
-        putchar('ch');
+        putchar(ch);
 }
 
 int main(void) {
     int i, ln;
+    int c_scanf;
 
     printf("三角形有几层：");   scanf("%d", &ln);
+    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        ;
 
     for (i = 1; i <= ln; i++) {
         put_nchar(' ', ln - i);
@@ -21,5 +24,5 @@ int main(void) {
         putchar('\n');   
     }
 
-    return (0);
+    return(0);
 }

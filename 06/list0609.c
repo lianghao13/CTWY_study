@@ -9,13 +9,15 @@ int scan_unit(void) {
     int tmp;
 
     do {
-        printf("请输入一个非负整数：");
-        scanf("%d", &tmp);
+        int c_scanf;
+        printf("请输入一个非负整数：");     scanf("%d", &tmp);
+        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+            ;
         if (tmp < 0)
             puts("\a请不要输入负整数。");
     } while (tmp < 0);
     
-    return (tmp);
+    return(tmp);
 }
 
 /*---返回非负整数倒转后的值---*/
@@ -29,13 +31,13 @@ int rev_int(int num) {
         } while (num > 0);
     }
     
-    return (tmp);
+    return(tmp);
 }
 
 int main(void) {
-    int nx = scan_unit(void);
+    int nx = scan_unit();
 
     printf("该整数倒转后的值是：%d。\n", rev_int(nx));
 
-    return (0);
+    return(0);
 }
