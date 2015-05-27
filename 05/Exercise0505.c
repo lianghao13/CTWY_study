@@ -8,10 +8,13 @@
 int main(void) {
     int i;
     int vx[NUMBER];      /*包含NUMBER个元素的数组*/
+    int c_scanf;
 
+    puts("请给数组元素赋整数值。");
     for (i = 0; i < NUMBER; i++) {
-        printf("vx[%d]:", i);
-        scanf("%d", &vx[i]);
+        printf("vx[%d]:", i);       scanf("%d", &vx[i]);
+        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+            ;
     }
 
     for (i = 0; i < (NUMBER / 2); i++) {

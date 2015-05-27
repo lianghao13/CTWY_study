@@ -4,9 +4,9 @@
 
 #include <stdio.h>
 
-#define NUMBER  5
+#define NUMBER 5
 
-int tensu[NUMBER];
+static int tensu[NUMBER];
 
 int top(void);
 
@@ -16,8 +16,10 @@ int main(void) {
 
     printf("请输入%d名学生的分数。\n", NUMBER);
     for (i = 0; i < NUMBER; i++) {
-        printf("%d:", i+1);
-        scanf("%d", &tensu[i]);
+        int c_scanf;
+        printf("%d:", i+1);     scanf("%d", &tensu[i]);
+        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+            ;
     }
  
     printf("最高分=%d\n", top());

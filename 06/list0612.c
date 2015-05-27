@@ -1,4 +1,4 @@
-/*
+/* 
     将数组的所有元素设置为0
 */
 
@@ -19,8 +19,9 @@ int main(void) {
     int_set(ary1, 5);           /*把0赋值给数组ary1的所有元素*/
     int_set(ary2, 3);           /*把0赋值给数组ary2的所有元素*/
 
-    for (i = 0; i < 5; i++) printf("ary1[%d] = %d\n", ary1[i]);
-    for (i = 0; i < 3; i++) printf("ary2[%d] = %d\n", ary2[i]);
+    for (i = 0; i < 5; i++) printf("ary1[%d] = %d\n", i, ary1[i]);
+    
+    for (i = 0; i < 3; i++) printf("ary2[%d] = %d\n", i, ary2[i]);
 
-    return (0);
+    return(0);
 }
