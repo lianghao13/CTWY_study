@@ -4,8 +4,8 @@
 
 #include <stdio.h>
 
-#define NUMBER  5
-#define FAILED  -1
+#define NUMBER 5
+#define FAILED -1
 
 /*---查找元素数为no的数组vc中与key一致的元素---*/
 int search(const int vc[], int key, int no) {
