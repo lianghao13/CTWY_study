@@ -16,7 +16,7 @@ int search(int vc[], int key, int no) {
            break;                  /*查找成功*/
         i++;
     }
-    return (i == no ? FAILED : i);
+    return(i == no ? FAILED : i);
 }
 
 int main(void) {
@@ -24,11 +24,15 @@ int main(void) {
     int vx[NUMBER+1];
 
     for (i = 0; i < NUMBER; i++) {
-        printf("vx[%d]:", i);
-        scanf("%d", &vx[i]);
+        int c_scanf;
+        printf("vx[%d]:", i);        scanf("%d", &vx[i]);
+        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+            ;
     }
-    printf("要查找的值：");
-    scanf("%d", &ky);
+    int c_scanf;
+    printf("要查找的值：");          scanf("%d", &ky);
+    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        ;
 
     idx = search(vx, ky, NUMBER);
     if (idx == FAILED)
@@ -36,5 +40,5 @@ int main(void) {
     else
         printf("%d是数组的第%d号元素。\n", ky, idx+1);
     
-    return (0);
+    return(0);
 }

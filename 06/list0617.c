@@ -14,9 +14,9 @@ void mat_add(const int ma[2][3], const int mb[2][3], int mc[2][3]) {
 
 int main(void) {
     int i, j; 
-    int ma[i][j] = { {1, 2, 3}, {4, 5, 6} };
-    int mb[i][j] = { {6, 3, 4}, {5, 1, 2} };
-    int mc[i][j] = { 0 };
+    int ma[2][3] = { {1, 2, 3}, {4, 5, 6} };
+    int mb[2][3] = { {6, 3, 4}, {5, 1, 2} };
+    int mc[2][3] = { 0 };
     
     mat_add(ma, mb, mc);                /*把ma和mb的和保存到mc中*/
 

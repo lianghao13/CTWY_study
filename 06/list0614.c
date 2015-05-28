@@ -24,11 +24,15 @@ int main(void) {
     int vx[NUMBER];
 
     for (i = 0; i < NUMBER; i++) {
-        printf("vx[%d]:", i);
-        scanf("%d", &vx[i]);
+        int c_scanf;
+        printf("vx[%d]:", i);    scanf("%d", &vx[i]);
+        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+            ;
     }
-    printf("要查找的值：");
-    scanf("%d", &ky);
+    int c_scanf;
+    printf("要查找的值：");      scanf("%d", &ky);
+    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        ;
 
     idx = search(vx, ky, NUMBER);
     if (idx == FAILED)
