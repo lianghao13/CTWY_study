@@ -20,7 +20,7 @@ int max_Colum(const int ary[NUMBER][COURSE], int colum) {
 /*---求传入数组每行（即每名学生）的平均成绩---*/
 double ave_Row(const int ary[NUMBER][COURSE], int row) {
     int j = 0;
-    int ave = 0;
+    double ave = 0;
     int sum = 0;
     for ( ; j < COURSE; ++j) {
         sum += ary[row][j];
@@ -35,7 +35,7 @@ int main(void) {
     int max[COURSE];                       /*三个科目（语文lang，数学math，英语eng）的最高分以下标为标识保存在一维数组中*/
     double ave[NUMBER];                    /*每名学生的平均成绩保存在以下标标识的一维数组中*/
 
-    char *str[COURSE] = { "语文", "数学", "英语" }, *p[COURSE];
+    char const *str[COURSE] = { "语文", "数学", "英语" }, *p[COURSE];
     for (i = 0; i < COURSE; ++i) {
         p[i] = str[i];
     }
