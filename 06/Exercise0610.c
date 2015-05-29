@@ -22,7 +22,7 @@ int main(void) {
     int i, j; 
     int ma[2][3] = { {1, 2, 3}, {4, 5, 6} };
     int mb[3][2] = { {6, 3}, {4, 5}, {1, 2} };
-    int mc[2][2] = { 0 };
+    int mc[2][2] = { {0, 0}, {0, 0} };
     
     mul(ma, mb, mc);                /*把ma和mb的积保存到mc中*/
 
@@ -35,7 +35,7 @@ int main(void) {
     puts("矩阵mb为：");
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 2; j++)
-            printf("%3d", ma[i][j]);
+            printf("%3d", mb[i][j]);
         putchar('\n');
     }
     puts("两个矩阵之积mc为：");

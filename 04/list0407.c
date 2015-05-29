@@ -6,9 +6,11 @@
 
 int main(void){
     int no;
+    int c_scanf;
 
-    printf("请输入一个整数：");
-    scanf("%d", &no);
+    printf("请输入一个整数：");      scanf("%d", &no);
+    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        ;
 
     while (no >= 0) {
         printf("%d ", no);
@@ -16,5 +18,5 @@ int main(void){
     }
     putchar('\n');              /*输入完成后换行*/
 
-    return (0);
+    return(0);
 }
