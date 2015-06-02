@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-int x = 700;                        /*文件作用域*
+static int x = 700;                        /*文件作用域*/
 
 void print_x(void) {
     printf("x = %d\n", x);
