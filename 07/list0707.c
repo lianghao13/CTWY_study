@@ -1,5 +1,5 @@
 /*
- *显示unsigned型的逻辑与、逻辑或、逻辑异或和反码
+ *显示对unsigned型作左移和右移后的值
 */
 
 #include <stdio.h>
@@ -27,24 +27,19 @@ void print_bits(unsigned x) {
 }
 
 int main(void) {
-    unsigned na, nb;
+    unsigned nx, no;
     int c_scanf;
 
-    puts("请输入两个非负整数。");
-    printf("整数A：");          scanf("%u", &na);
+    printf("请输入一个非负整数："); scanf("%u", &nx);
     while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
         ;
-    printf("整数B：");          scanf("%u", &nb);
+    printf("位移位数：");           scanf("%u", &no);
     while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
         ;
 
-    printf("\n A     =");       print_bits(na);
-    printf("\n B     =");       print_bits(nb);
-    printf("\n A & B =");       print_bits(na & nb);        /*逻辑与*/
-    printf("\n A | B =");       print_bits(na | nb);        /*逻辑或*/
-    printf("\n A ^ B =");       print_bits(na ^ nb);        /*逻辑异或*/
-    printf("\n ~A    =");       print_bits(~na);            /*取反*/
-    printf("\n ~B    =");       print_bits(~nb);            /*取反*/
+    printf("\n 整数       =");       print_bits(nx);
+    printf("\n 左移后的值 =");       print_bits(nx << no);
+    printf("\n 右移后的值 =");       print_bits(nx >> no);
     putchar('\n');
 
     return(0);
