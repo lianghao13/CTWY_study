@@ -19,7 +19,7 @@ int int_bits(void) {
     return(count_bits(~0U));
 }
 
-/*---返回unsigned型的位串内容---*/
+/*---显示unsigned型的位串内容---*/
 void print_bits(unsigned x) {
     int i;
     for (i = int_bits() - 1; i >= 0; i--)

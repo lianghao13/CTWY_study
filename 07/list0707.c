@@ -19,7 +19,7 @@ int int_bits(void) {
     return(count_bits(~0U));
 }
 
-/*---返回unsigned型的位串内容---*/
+/*---显示unsigned型的位串内容---*/
 void print_bits(unsigned x) {
     int i;
     for (i = int_bits() - 1; i >= 0; i--)
@@ -30,10 +30,11 @@ int main(void) {
     unsigned nx, no;
     int c_scanf;
 
-    printf("请输入一个非负整数："); scanf("%u", &nx);
+    printf("请输入一个非负整数：");
+    scanf("%u", &nx);
     while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
         ;
-    printf("位移位数：");           scanf("%u", &no);
+    printf("位移位数：");          scanf("%u", &no);
     while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
         ;
 
