@@ -16,7 +16,7 @@ int count_bits(unsigned x) {
 
 /*---返回unsigned型的位数---*/
 int int_bits(void) {
-    return(count_bits(~0U));
+    return(count_bits(~ 0U));
 }
 
 /*---显示unsigned型的位串内容---*/
