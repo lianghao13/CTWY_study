@@ -39,21 +39,24 @@ unsigned lrotate(unsigned x, int n) {
 /*---返回无符号整数第pos位设为1后的值---*/
 unsigned set(unsigned x, int pos) {
     unsigned ref;
-    ref = (1U << (unsigned)pos);
+    pos -= 1;
+    ref = lrotate(1U, pos);
     return(x | ref);
 }
 
 /*---返回无符号整数第pos位设为0后的值---*/
 unsigned reset(unsigned x, int pos) {
     unsigned ref;
-    ref = (1U << (unsigned)pos);
-    return(x & (~ ref));
+    pos -= 1;
+    ref = ~ (lrotate(1U, pos));
+    return(x & ref);
 }
 
 /*---返回无符号整数第pos位取反后的值---*/
 unsigned inverse(unsigned x, int pos) {
     unsigned ref;
-    ref = (1U << (unsigned)pos);
+    pos -= 1;
+    ref = lrotate(1U, pos);
     return(x ^ ref);
 }
 
@@ -61,23 +64,26 @@ unsigned inverse(unsigned x, int pos) {
 int main(void) {
     unsigned nx;
     int no, c_scanf;
+    char flag;
 
-    printf("请输入一个非负整数：");          scanf("%u", &nx);
+    printf("请输入一个非负整数：");     scanf("%u", &nx);
     while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
         ;
     do {
-        printf("指定设置位数（非负数）：");  scanf("%d", &no);
+        printf("指定设置位数（非负数）："); scanf("%d", &no);
         while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
             ;
-        if (no < 0 || no >= int_bits()) {
-            printf("\a输入值有误，会导致移位运算溢出。请重新输入。\n");
+        flag = 0;
+        if (no < 0 || no > int_bits()) {
+            flag = 1;
+            printf("\a输入值有误，位数超过范围。请重新输入。\n");
         }
-    } while (no < 0 || no >= int_bits());
+    } while (flag);
     
-    printf("\n 整数 %u 的内存形式为：                   ", nx);     print_bits(nx);
-    printf("\n 从左至右第 %d 位设为1后的内存形式为：    ", no + 1);     print_bits(set(nx, no));
-    printf("\n 从左至右第 %d 位设为0后的内存形式为：    ", no + 1);     print_bits(reset(nx, no));
-    printf("\n 从左至右第 %d 位取反后的内存形式为：     ", no + 1);     print_bits(inverse(nx, no));
+    printf("\n 整数%-12u的内存形式为：\t", nx);     print_bits(nx);
+    printf("\n右起第%d位设为1后的内存形式为：\t", no);     print_bits(set(nx, no));
+    printf("\n右起第%d位设为0后的内存形式为：\t", no);     print_bits(reset(nx, no));
+    printf("\n右起第%d位取反后的内存形式为：\t", no);     print_bits(inverse(nx, no));
     putchar('\n');
 
     return(0);

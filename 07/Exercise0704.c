@@ -26,57 +26,72 @@ void print_bits(unsigned x) {
         putchar(((x >> i) & 1U) ? '1': '0');
 }
 
-/*---返回无符号整数第pos位设为1后的值---*/
-unsigned set(unsigned x, int pos) {
+/*---返回无符号整数第pos位开始的n位设为1后的值---*/
+unsigned set_n(unsigned x, int pos, int n) {
     unsigned ref;
-    ref = (1U << (unsigned)pos);
-    return(x | ref);
+    int i;
+    pos -= 1;
+    for (i = 0; i < n; ++i) {
+        ref = 1U << pos++;
+        x |= ref;
+    }
+    return(x);
 }
 
-/*---返回无符号整数第pos位设为0后的值---*/
-unsigned reset(unsigned x, int pos) {
+/*---返回无符号整数第pos位开始的n位设为0后的值---*/
+unsigned reset_n(unsigned x, int pos, int n) {
     unsigned ref;
-    ref = (1U << (unsigned)pos);
-    return(x & (~ ref));
+    int i;
+    pos -= 1;
+    for (i = 0; i < n; ++i) {
+        /*由于置0是通过&操作和0的共同作用，移位补充进的0会影响结果，而置1和取反不会*/
+        ref = ~(1U << pos++);
+        /*pos++;*/
+        /*printf("\nref:\t");     print_bits(ref);    putchar('\n');*/
+        x &= ref;
+        /*printf("\nx:\t");     print_bits(x);    putchar('\n');*/
+    }
+    return(x);
 }
 
-/*---返回无符号整数第pos位取反后的值---*/
-unsigned inverse(unsigned x, int pos) {
+/*---返回无符号整数第pos位开始的n位取反后的值---*/
+unsigned inverse_n(unsigned x, int pos, int n) {
     unsigned ref;
-    ref = (1U << (unsigned)pos);
-    return(x ^ ref);
-}
-
-/*---测试显示位移极限位数的效果---*/
-void print_ntest() {
-    unsigned ref;
-    printf("unsigned型的内存位数为=%d\t", int_bits());
-    ref = (1U >> (int_bits() - 1));
-    printf("ref= %u\t", ref);
-    print_bits(ref); putchar('\n');
+    int i;
+    pos -= 1;
+    for (i = 0; i < n; ++i) {
+        ref = 1U << pos++;
+        x ^= ref;
+    }
+    return(x);
 }
 
 int main(void) {
     unsigned nx;
-    int no, c_scanf;
+    int pos, count, c_scanf;
+    char flag;
 
     printf("请输入一个非负整数：");          scanf("%u", &nx);
     while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
         ;
     do {
-        printf("指定设置位数（非负数）：");  scanf("%d", &no);
+        printf("指定要设置的开始位数（非负数）：");  scanf("%d", &pos);
         while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
             ;
-        if (no < 0 || no >= int_bits()) {
-            printf("\a输入值有误，会导致移位运算溢出。请重新输入。\n");
+        printf("指定要设置的位数计数（非负数）：");  scanf("%d", &count);
+        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+            ;
+        flag = 0;
+        if (pos < 0 || pos >= int_bits() || (pos + count) > int_bits() || count < 0) {
+            flag = 1;
+            puts("输入值有误，请检查后重新输入!");
         }
-    } while (no < 0 || no >= int_bits());
+    } while (flag);
     
-    /*print_ntest();*/
-    printf("\n 整数 %u 的内存形式为：                   ", nx);     print_bits(nx);
-    printf("\n 从左至右第 %d 位设为1后的内存形式为：    ", no + 1);     print_bits(set(nx, no));
-    printf("\n 从左至右第 %d 位设为0后的内存形式为：    ", no + 1);     print_bits(reset(nx, no));
-    printf("\n 从左至右第 %d 位取反后的内存形式为：     ", no + 1);     print_bits(inverse(nx, no));
+    printf("\n整数%-12u的内存形式为：\t\t", nx);     print_bits(nx);
+    printf("\n 右起第%d位连续%d位设为1后的内存形式为：\t", pos, count);     print_bits(set_n(nx, pos, count));
+    printf("\n 右起第%d位连续%d位设为0后的内存形式为：\t", pos, count);     print_bits(reset_n(nx, pos, count));
+    printf("\n 右起第%d位连续%d位取反后的内存形式为：\t", pos, count);     print_bits(inverse_n(nx, pos, count));
     putchar('\n');
 
     return(0);
