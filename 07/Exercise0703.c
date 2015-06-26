@@ -3,9 +3,8 @@
 */
 
 #include <stdio.h>
-#include <limits.h>
 
-/*---返回在整数x中设置的位数---*/
+/*---返回在整数x中1的位数---*/
 int count_bits(unsigned x) {
     int count = 0;
     while (x) {
@@ -58,14 +57,6 @@ unsigned inverse(unsigned x, int pos) {
     return(x ^ ref);
 }
 
-/*---测试显示位移极限位数的效果---*/
-void print_ntest() {
-    unsigned ref;
-    printf("unsigned型的内存位数为=%d\t", int_bits());
-    ref = (1U >> (int_bits() - 1));
-    printf("ref= %u\t", ref);
-    print_bits(ref); putchar('\n');
-}
 
 int main(void) {
     unsigned nx;
@@ -83,7 +74,6 @@ int main(void) {
         }
     } while (no < 0 || no >= int_bits());
     
-    /*print_ntest();*/
     printf("\n 整数 %u 的内存形式为：                   ", nx);     print_bits(nx);
     printf("\n 从左至右第 %d 位设为1后的内存形式为：    ", no + 1);     print_bits(set(nx, no));
     printf("\n 从左至右第 %d 位设为0后的内存形式为：    ", no + 1);     print_bits(reset(nx, no));

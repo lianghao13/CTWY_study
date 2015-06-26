@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-/*---返回在整数x中设置的位数---*/
+/*---返回在整数x中1的位数---*/
 int count_bits(unsigned x) {
     int count = 0;
     while (x) {
