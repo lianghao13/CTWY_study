@@ -47,26 +47,26 @@ int main(void) {
     switch (sex = select_sex()) {
         case Male:    puts("您选择的是男性。");    break;
         case Female:  puts("您选择的是女性。");    break;
-    
-        default:    err_input();     break;
+
+        case Invalid: err_input();                 break;
     }
 
     puts("显示月份的选择。");
     switch (month = select_month()) {
-        case January:       printf("您选择的是%2d月，英文表示为January。", month);      break;
-        case February:      printf("您选择的是%2d月，英文表示为February。", month);     break;
-        case March:         printf("您选择的是%2d月，英文表示为March。", month);        break;
-        case April:         printf("您选择的是%2d月，英文表示为April。", month);        break;
-        case May:           printf("您选择的是%2d月，英文表示为May。", month);          break;
-        case June:          printf("您选择的是%2d月，英文表示为June。", month);         break;
-        case July:          printf("您选择的是%2d月，英文表示为July。", month);         break;
-        case August:        printf("您选择的是%2d月，英文表示为August。", month);       break;
-        case September:     printf("您选择的是%2d月，英文表示为September。", month);    break;
-        case October:       printf("您选择的是%2d月，英文表示为October。", month);      break;
-        case November:      printf("您选择的是%2d月，英文表示为November。", month);     break;
-        case December:      printf("您选择的是%2d月，英文表示为December。", month);     break;
+        case January:       printf("您选择的是%02d月，英文表示为January。", month);      break;
+        case February:      printf("您选择的是%02d月，英文表示为February。", month);     break;
+        case March:         printf("您选择的是%02d月，英文表示为March。", month);        break;
+        case April:         printf("您选择的是%02d月，英文表示为April。", month);        break;
+        case May:           printf("您选择的是%02d月，英文表示为May。", month);          break;
+        case June:          printf("您选择的是%02d月，英文表示为June。", month);         break;
+        case July:          printf("您选择的是%02d月，英文表示为July。", month);         break;
+        case August:        printf("您选择的是%02d月，英文表示为August。", month);       break;
+        case September:     printf("您选择的是%02d月，英文表示为September。", month);    break;
+        case October:       printf("您选择的是%02d月，英文表示为October。", month);      break;
+        case November:      printf("您选择的是%02d月，英文表示为November。", month);     break;
+        case December:      printf("您选择的是%02d月，英文表示为December。", month);     break;
     
-        default:    err_input();         break;
+        case Error:    err_input();         break;
     }
     putchar('\n');
 
