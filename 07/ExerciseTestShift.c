@@ -97,7 +97,7 @@ void print_htest() {
     printf("short的sizeof值为=%d\n", sizeof(ref));
     puts("初始值：");
     printf("ref= [%12hd]\t", ref);   print_bits((unsigned)(ref));    puts("\n");
-    pos = 64;
+    pos = 33;
     printf("移位值：(单次移动位数为%d，其值与32的模是%d)\n", pos, pos % 32);
     while (ref) {
         printf("ref= [%12hd]\t", ref);   print_bits((unsigned)(ref));    putchar('\n');
