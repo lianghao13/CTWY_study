@@ -19,8 +19,8 @@ int main(void) {
     printf("请输入学生人数：");
     do {
         scanf("%d", &num);
-        int c_scanf;                    /*scanf()后用于清除输入缓存*/ 
-        while(((c_scanf = getchar()) != '\n' ) && (c_scanf != EOF))
+        int cln_buf;                    /*scanf()后用于清除输入缓存*/ 
+        while(((cln_buf = getchar()) != '\n' ) && (cln_buf != EOF))
             ;                                        /*清空缓冲区中的多余字符*/ 
         if (num <1 || num > NUMBER)
             printf("\a输入告警！\n人数范围应在[1到%d]，请再次输入:", NUMBER);
@@ -31,8 +31,8 @@ int main(void) {
         printf("%2d号：", i + 1);
         do {
             scanf("%d", &tensu[i]);
-            int c_scanf;                    /*scanf()后用于清除输入缓存*/ 
-            while(((c_scanf = getchar()) != '\n' ) && (c_scanf != EOF))
+            int cln_buf;                    /*scanf()后用于清除输入缓存*/ 
+            while(((cln_buf = getchar()) != '\n' ) && (cln_buf != EOF))
                 ;                                        /*清空缓冲区中的多余字符*/ 
             if (tensu[i] < 0 || tensu[i] > 100)
                 printf("\a分数范围应为[0到100]：");

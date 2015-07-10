@@ -28,14 +28,14 @@ void print_bits(unsigned x) {
 
 int main(void) {
     unsigned na, nb;
-    int c_scanf;
+    int cln_buf;
 
     puts("请输入两个非负整数。");
     printf("整数A：");          scanf("%u", &na);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("整数B：");          scanf("%u", &nb);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     printf("\n A     =");       print_bits(na);

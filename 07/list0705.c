@@ -28,10 +28,10 @@ void print_bits(unsigned x) {
 
 int main(void) {
     unsigned nx;
-    int c_scanf;
+    int cln_buf;
 
     printf("请输入一个非负整数：");     scanf("%u", &nx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     print_bits(nx);

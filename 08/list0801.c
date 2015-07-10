@@ -17,15 +17,15 @@ double sqr_double(double x) {
 int main(void) {
     int     nx;
     double  dx;
-    int     c_scanf;
+    int     cln_buf;
 
     printf("请输入一个整数：");     scanf("%d",     &nx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("该数的平方是%d。\n", sqr_int(nx));
 
     printf("请输入一个实数：");     scanf("%lf",    &dx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("该数的平方是%f。\n", sqr_double(dx));
 

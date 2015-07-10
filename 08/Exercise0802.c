@@ -8,20 +8,20 @@
 
 int main(void) {
     int a, b, c, d;
-    int c_scanf;
+    int cln_buf;
 
     puts("请输入4个整数。");
     printf("a = ");     scanf("%d", &a);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("b = ");     scanf("%d", &b);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("c = ");     scanf("%d", &c);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("d = ");     scanf("%d", &d);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     
     puts("两种求四个值中最大值的方法。");

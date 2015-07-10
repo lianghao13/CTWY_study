@@ -18,7 +18,7 @@ int main(void) {
     int mb[2][3] = { {6, 3, 4}, {5, 1, 2} };
     int mc[2][3] = { 0 };
     
-    mat_add(ma, mb, mc);                /*把ma和mb的和保存到mc中*/
+    mat_add((const int)ma, (const int)mb, mc);                /*把ma和mb的和保存到mc中*/
 
     for (i = 0; i < 2; i++) {
         for (j = 0; j < 3; j++)

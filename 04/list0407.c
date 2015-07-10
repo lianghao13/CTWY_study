@@ -6,10 +6,10 @@
 
 int main(void){
     int no;
-    int c_scanf;
+    int cln_buf;
 
     printf("请输入一个整数：");      scanf("%d", &no);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     while (no >= 0) {

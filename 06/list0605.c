@@ -16,13 +16,13 @@ double power(double dx, int no) {
 int main(void) {
     int n;
     double x;
-    int c_scanf;
+    int cln_buf;
     
     printf("请输入一个实数：");      scanf("%lf", &x);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("请输入一个整数：");      scanf("%d", &n);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     printf("%.2f的%d次幂是%.2f。\n", x, n, power(x, n));

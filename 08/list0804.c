@@ -8,10 +8,10 @@
 
 int main(void) {
     int na;
-    int c_scanf;
+    int cln_buf;
 
     printf("请输入一个整数：");     scanf("%d", &na);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     if (na) {
         putsa("这个数不是0。");

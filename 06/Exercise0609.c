@@ -37,9 +37,9 @@ int main(void) {
     puts("下面演示把数组ary2传入ary1中，并在ary1中进行倒序排列。");
     printf("请给有%d个元素的数组ary2赋整数值。\n", NUMBER);
     for (i = 0; i < NUMBER; i++) {
-        int c_scanf;
+        int cln_buf;
         printf("ary2[%d]:", i);       scanf("%d", &ary2[i]);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
     }
 

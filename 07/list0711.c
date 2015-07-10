@@ -13,19 +13,19 @@ double dist(double x1, double y1, double x2, double y2) {
 int main(void) {
     double x1, y1;          /*点1*/
     double x2, y2;          /*点2*/
-    int c_scanf;
+    int cln_buf;
 
     printf("<点1>X坐标：");     scanf("%lf", &x1);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("     Y坐标：");     scanf("%lf", &y1);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("<点2>X坐标：");     scanf("%lf", &x2);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("     Y坐标：");     scanf("%lf", &y2);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     printf("2点之间的距离为%f。\n", dist(x1, y1, x2, y2));

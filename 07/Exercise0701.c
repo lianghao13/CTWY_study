@@ -28,13 +28,13 @@ void print_bits(unsigned x) {
 
 int main(void) {
     unsigned nx, no, Lresult, Rresult;
-    int i, c_scanf;
+    int i, cln_buf;
 
     printf("请输入一个非负整数：");          scanf("%u", &nx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("位移位数（非负数）：");          scanf("%u", &no);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     Lresult = Rresult = nx;
 

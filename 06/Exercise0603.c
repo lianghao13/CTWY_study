@@ -11,11 +11,11 @@ int cube(int x) {
 
 int main(void) {
     int kx;
-    int c_scanf;
+    int cln_buf;
     
     puts("请输入一个整数。");
     printf("整数kx：");      scanf("%d", &kx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     printf("kx的立方是%d。\n", cube(kx));

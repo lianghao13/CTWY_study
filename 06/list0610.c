@@ -16,9 +16,9 @@ int main(void) {
 
     printf("请输入%d名学生的分数。\n", NUMBER);
     for (i = 0; i < NUMBER; i++) {
-        int c_scanf;
+        int cln_buf;
         printf("%d:", i+1);     scanf("%d", &tensu[i]);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
     }
  

@@ -68,18 +68,18 @@ unsigned inverse_n(unsigned x, int pos, int n) {
 
 int main(void) {
     unsigned nx;
-    int pos, count, c_scanf;
+    int pos, count, cln_buf;
     char flag;
 
     printf("请输入一个非负整数：");          scanf("%u", &nx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     do {
         printf("指定要设置的开始位数（非负数）：");  scanf("%d", &pos);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
         printf("指定要设置的位数计数（非负数）：");  scanf("%d", &count);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
         flag = 0;
         if (pos < 0 || pos >= int_bits() || (pos + count) > int_bits() || count < 0) {

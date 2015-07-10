@@ -23,12 +23,12 @@ int main(void) {
 
     printf("请输入%d名学生的分数。\n", NUMBER);
     for (i = 0; i < NUMBER; i++) {
-        int c_scanf;
+        int cln_buf;
         printf("[%d]英语：", i+1);   scanf("%d", &eng[i]);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
         printf("   数学：");        scanf("%d", &mat[i]);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
     }
     max_e = max_of(eng, NUMBER);

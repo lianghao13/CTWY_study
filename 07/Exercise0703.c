@@ -63,15 +63,15 @@ unsigned inverse(unsigned x, int pos) {
 
 int main(void) {
     unsigned nx;
-    int no, c_scanf;
+    int no, cln_buf;
     char flag;
 
     printf("请输入一个非负整数：");     scanf("%u", &nx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     do {
         printf("指定设置位数（非负数）："); scanf("%d", &no);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
         flag = 0;
         if (no < 0 || no > int_bits()) {

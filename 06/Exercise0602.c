@@ -16,17 +16,17 @@ int min3(int x, int y, int z) {
 
 int main(void) {
     int na, nb, nc;
-    int c_scanf;
+    int cln_buf;
    
     puts("请输入三个整数。");
     printf("整数1：");      scanf("%d", &na);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("整数2：");      scanf("%d", &nb);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("整数3：");      scanf("%d", &nc);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     printf("较小的整数值是%d。\n", min3(na, nb, nc));

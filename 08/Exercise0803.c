@@ -9,21 +9,21 @@
 int main(void) {
     int     nx, ny;
     double  dx, dy;
-    int     c_scanf;
+    int     cln_buf;
 
     puts("请输入两个整数值。");
     printf("nx = ");    scanf("%d", &nx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ; 
     printf("ny = ");    scanf("%d", &ny);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     puts("请输入两个实数值。");
     printf("dx = ");    scanf("%lf", &dx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ; 
     printf("dy = ");    scanf("%lf", &dy);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     swap(int, nx, ny);

@@ -42,11 +42,11 @@ int main(void) {
 
     puts("请输入每名学生各科的分数。");
     for (i = 0; i < NUMBER; i++) {
-        int c_scanf;
+        int cln_buf;
         printf("第%3d号学生\n", i + 1);
         for (j = 0; j < COURSE; ++j) {
             printf(" %s成绩：", p[j]);   scanf("%d", &tensu[i][j]);
-            while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+            while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
                 ;
         }
     }

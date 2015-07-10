@@ -8,12 +8,12 @@
 int main(void) {
     int i;
     int vx[NUMBER];      /*包含NUMBER个元素的数组*/
-    int c_scanf;
+    int cln_buf;
 
     puts("请给数组元素赋整数值。");
     for (i = 0; i < NUMBER; i++) {
         printf("vx[%d]:", i);       scanf("%d", &vx[i]);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
     }
 

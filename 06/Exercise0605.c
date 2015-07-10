@@ -12,10 +12,10 @@ void alert(int no) {
 
 int main(void) {
     int i;
-    int c_scanf;
+    int cln_buf;
 
     printf("输入发出警报的次数:");   scanf("%d", &i);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     puts("正在发出警报！");

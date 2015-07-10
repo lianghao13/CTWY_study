@@ -9,9 +9,9 @@ int scan_unit(void) {
     int tmp;
 
     do {
-        int c_scanf;
+        int cln_buf;
         printf("请输入一个非负整数：");     scanf("%d", &tmp);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
         if (tmp < 0)
             puts("\a请不要输入负整数。");

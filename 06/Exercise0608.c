@@ -34,9 +34,9 @@ int main(void) {
     
     printf("请给有%d个元素的数组赋整数值。\n", NUMBER);
     for (i = 0; i < NUMBER; i++) {
-        int c_scanf;
+        int cln_buf;
         printf("ary1[%d]:", i);       scanf("%d", &ary1[i]);
-        while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+        while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
             ;
     }
 

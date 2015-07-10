@@ -16,14 +16,14 @@ int diff(int x, int y) {
 
 int main(void) {
     int kx, ky, kx2, ky2;
-    int c_scanf;
+    int cln_buf;
     
     puts("请输入两个整数。");
     printf("整数kx：");      scanf("%d", &kx);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
     printf("整数ky：");      scanf("%d", &ky);
-    while((c_scanf = getchar()) != '\n' && c_scanf != EOF)
+    while((cln_buf = getchar()) != '\n' && cln_buf != EOF)
         ;
 
     kx2 = sqr(kx);          /*kx的平方*/
