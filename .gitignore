@@ -10,3 +10,4 @@
 *.pyc  
 #不是正则表达式，因为FreeMind-MMX的辅助文件以点开头
 *.mmx  
+/.project

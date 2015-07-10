@@ -5,14 +5,14 @@
 #include <stdio.h>
 
 /*---把2行3列的矩阵ma和mb的积保存在mc中---*/
-void mul(const int ma[2][3], const int mb[3][2], int mc[2][2]) {
+void mul(const int arry1[2][3], const int arry2[3][2], int arry3[2][2]) {
     int i, j, k;
     int tmp = 0;
     for (i = 0; i < 2; i++) {
         for (j = 0; j < 2; j++) {
             for (k = 0; k < 3; ++k) {
-                tmp = ma[i][k] * mb[k][j];
-                mc[i][j] += tmp;
+                tmp = arry1[i][k] * arry2[k][j];
+                arry3[i][j] += tmp;
             }
         }
     }
