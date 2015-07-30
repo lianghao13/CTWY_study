@@ -20,5 +20,15 @@ int main(void) {
 
     isako = &sanaka;             /*isako指向sanaka（移情别恋） */
 
-    *hiroko = 180;               /*将hiroko指向 */ 
+    *hiroko = 180;               /*将hiroko指向的对象赋为180，即修改洋子喜欢的人的身高 */ 
+
+    putchar('\n');
+    printf("佐藤的身高：%d\n", sato);
+    printf("佐中的身高：%d\n", sanaka);
+    printf("平木的身高：%d\n", hiraki);
+    printf("真琦的身高：%d\n", masaki);
+    printf("伊莎子喜欢的人的身高：%d\n", *isako);
+    printf("洋子喜欢的人的身高：%d\n", *hiroko);
+
+    return(0);
 }
