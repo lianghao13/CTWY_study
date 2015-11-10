@@ -1,10 +1,36 @@
 #可执行文件
 #*.exe  
-#编译生成的中间文件
-*.o    
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+#编译生成的中间文件Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+#预编译头文件 Precompiled Headers
+*.gch
+*.pch
+
+#库文件Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.so.*
+*.dylib
+
+#Debug Files
+*.dSYM/
+
 #vim的临时缓存文件
 *.swp  
-#vim 临时文件
 *~     
 #python 的编译文件
 *.pyc  
